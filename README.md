@@ -1,5 +1,5 @@
 # context-api-template
-This is a personal used template to understand the `context api`.
+This is a structure to understand the `context api`.
 
 <br/><br/>
 
