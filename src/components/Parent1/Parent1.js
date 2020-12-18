@@ -4,36 +4,73 @@ import React from 'react';
 import { useStateValue } from '../../state/StateProvider';
 
 const Parent1 = ({ setUser }) => {
-    const [{ user }, dispatch] = useStateValue();
+    const [{ user, age }, dispatch] = useStateValue();
     
+    // ADD user
     const addUser = () => {
-        // setUser('arif')
         dispatch({
             type: 'SET_USER',
-            user: 'arif'
+            user: 'Md Arif Hossain'
         })
-    }
-        
-    const removeUser = () => {
-        // setUser(null)
-        dispatch({
-            type: 'SET_USER',
-            user: null
-        })
-    }
+    };
 
-    const setUserNull = () => {
+    // REMOVE user
+    const removeUser = () => {
         dispatch({
             type: 'REMOVE_USER'
         })
-    }
+    };
+
+    // UPDATE user
+    const onChangeUserInput = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'SET_USER',
+            user: e.target.value
+        })
+    };
+
+    // ADD age
+    const addAge = () => {
+        dispatch({
+            type: 'SET_AGE',
+            age: '21'
+        })
+    };
+
+    // REMOVE age
+    const removeAge = () => {
+        dispatch({
+            type: 'REMOVE_AGE'
+        })
+    };
+
+    // UPDATE age
+    const onChangeAgeInput = (e) => {
+        e.preventDefault();
+        dispatch({
+            type: 'SET_AGE',
+            age: e.target.value
+        })
+    };
 
     return (
         <section>
             <h1>Parent1</h1>
-            <button onClick={addUser}>Set user arif</button>
-            <button onClick={removeUser}>remove user</button>
-            <button onClick={setUserNull}>set User Null</button>
+            <button onClick={addUser}>Set user Arif</button>
+            <button onClick={removeUser}>Remove user</button>
+
+            <br /><br />
+            <button onClick={addAge}>Set age 21</button>
+            <button onClick={removeAge}>Remove age</button>
+
+            <br /><br />
+            <label htmlFor="user">Update user</label>
+            <input name="user" onChange={e => onChangeUserInput(e)} value={user ? user : ''} />
+
+            <br /><br />
+            <label htmlFor="age">Update age</label>
+            <input name="age" onChange={e => onChangeAgeInput(e)} value={age ? age : ''} />
         </section>
     )
 }

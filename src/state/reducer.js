@@ -1,10 +1,13 @@
 export const initialState = {
-    user: null
+    user: null,
+    age: null
 };
 
 export const actionTypes = {
     SET_USER: 'SET_USER',
-    REMOVE_USER: 'REMOVE_USER'
+    REMOVE_USER: 'REMOVE_USER',
+    SET_AGE: 'SET_AGE',
+    REMOVE_AGE: 'REMOVE_AGE'
 };
 
 const reducer = (state, action) => {
@@ -15,13 +18,21 @@ const reducer = (state, action) => {
                 ...state,
                 user: action.user
             };
-
         case actionTypes.REMOVE_USER:
             return {
                 ...state,
                 user: null
             };
-        
+        case actionTypes.SET_AGE:
+            return {
+                ...state,
+                age: action.age
+            };
+        case actionTypes.REMOVE_AGE:
+            return {
+                ...state,
+                age: null
+            };
         default:
             return state;
     }

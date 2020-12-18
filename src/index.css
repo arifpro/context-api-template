@@ -15,3 +15,49 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.app {
+  /* display: flex; */
+}
+
+h1 {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+button, input {
+  margin-left: 0.3rem;
+  padding: 0.5rem;
+}
+
+section {
+  border: 1px solid gray;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.outputSection {
+  height: 100vh;
+  width: 30%;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  /* left: 0; */
+  overflow-x: hidden;
+  border: 1px solid gray;
+}
+.inputSection {
+  height: 100vh;
+  margin-left: 30%;
+  border: 1px solid gray;
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.title {
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: gray;
+  width: 100%;
+}
