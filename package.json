@@ -1,7 +1,6 @@
 {
   "name": "context-api-template",
-  "homepage1": "https://arifpro.github.io/context-api-template",
-  "homepage": "http://context-api.arifweb.me",
+  "homepage": "https://arifpro.github.io/context-api-template",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
